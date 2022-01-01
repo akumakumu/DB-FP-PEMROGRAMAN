@@ -11,7 +11,7 @@ nama_depan varchar(32),
 nama_belakang varchar(32),
 email varchar(64),
 no_telp int
-);
+)
 
 -- Table paket data
 CREATE TABLE paket_data
@@ -19,7 +19,21 @@ CREATE TABLE paket_data
 penyedia varchar(32),
 paket varchar(64),
 harga int
-);
+)
+
+-- Table Riwayat
+CREATE TABLE riwayat
+(
+nomor_transaksi int IDENTITY(1,1) NOT NULL,
+kategori varchar(32),
+jenis_transaksi varchar(32),
+nama_pelanggan varchar(64),
+nomor_pelanggan int,
+periode varchar(32),
+id_pelanggan int,
+email_pelanggan varchar(64),
+total_tagihan int
+)
 
 -- Insert Record paket_data
 INSERT INTO paket_data VALUES
@@ -90,8 +104,8 @@ INSERT INTO paket_data VALUES
 
 -- Insert Record Akun
 INSERT INTO akun (usrname, passwd)
-VALUES ('admin', 'notadmin');
+VALUES ('admin', 'notadmin')
 
-SELECT * FROM akun;
+SELECT * FROM akun
 
 SELECT * FROM paket_data
