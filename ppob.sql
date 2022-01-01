@@ -2,7 +2,15 @@ CREATE DATABASE ppob
 
 USE ppob
 
--- Table akun
+-- Table Pulsa
+CREATE TABLE pulsa
+(
+penyedia varchar(32),
+nominal int,
+harga int
+)
+
+-- Table Akun
 CREATE TABLE akun
 (
 usrname varchar(32) NOT NULL PRIMARY KEY,
@@ -13,11 +21,45 @@ email varchar(64),
 no_telp int
 )
 
--- Table paket data
+-- Table Paket Data
 CREATE TABLE paket_data
 (
 penyedia varchar(32),
 paket varchar(64),
+harga int
+)
+
+-- Tabel Tagihan
+CREATE TABLE tagihan
+(
+nomor_pelanggan int,
+nama varchar(64),
+daerah varchar(32),
+periode varchar(32),
+total_tagihan int
+)
+
+-- Tabel Game
+CREATE TABLE game
+(
+judul varchar(32),
+mikro varchar(16),
+harga int
+)
+
+-- Tabel Streaming
+CREATE TABLE streaming
+(
+plat_stream varchar(32),
+durasi varchar(16),
+harga int
+)
+
+-- Tabel Voucher
+CREATE TABLE voucher
+(
+nama_dagang varchar(32),
+nominal int,
 harga int
 )
 
@@ -35,7 +77,13 @@ email_pelanggan varchar(64),
 total_tagihan int
 )
 
--- Insert Record paket_data
+-- Record Pulsa
+
+-- Record Akun
+INSERT INTO akun (usrname, passwd)
+VALUES ('admin', 'notadmin')
+
+-- Record Paket Data
 INSERT INTO paket_data VALUES
 ('XL','Xtra Combo 5 GB + 10 GB YT',56000),
 ('XL','Xtra Combo 15 GB + 30 GB YT',83000),
@@ -101,10 +149,6 @@ INSERT INTO paket_data VALUES
 ('Flexi','10 GB + 1000 SMS',68000),
 ('Flexi','Nelpon dan SMS Sepuasnya',53000),
 ('Flexi','Edukasi',15000)
-
--- Insert Record Akun
-INSERT INTO akun (usrname, passwd)
-VALUES ('admin', 'notadmin')
 
 SELECT * FROM akun
 
