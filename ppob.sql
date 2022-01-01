@@ -2,14 +2,6 @@ CREATE DATABASE ppob
 
 USE ppob
 
--- Table Pulsa
-CREATE TABLE pulsa
-(
-penyedia varchar(32),
-nominal int,
-harga int
-)
-
 -- Table Akun
 CREATE TABLE akun
 (
@@ -20,6 +12,15 @@ nama_belakang varchar(32),
 email varchar(64),
 no_telp int
 )
+
+-- Table Pulsa
+CREATE TABLE pulsa
+(
+penyedia varchar(32),
+nominal int,
+harga int
+)
+
 
 -- Table Paket Data
 CREATE TABLE paket_data
@@ -76,6 +77,11 @@ id_pelanggan int,
 email_pelanggan varchar(64),
 total_tagihan int
 )
+
+-- Record Akun
+INSERT INTO akun (usrname, passwd) VALUES
+('admin', 'notadmin')
+
 
 -- Record Pulsa
 INSERT INTO pulsa VALUES
@@ -144,10 +150,6 @@ INSERT INTO pulsa VALUES
 ('Flexi',100000,101000),
 ('Flexi',150000,151000)
 
--- Record Akun
-INSERT INTO akun (usrname, passwd) VALUES
-('admin', 'notadmin')
-
 -- Record Paket Data
 INSERT INTO paket_data VALUES
 ('XL','Xtra Combo 5 GB + 10 GB YT',56000),
@@ -215,8 +217,53 @@ INSERT INTO paket_data VALUES
 ('Flexi','Nelpon dan SMS Sepuasnya',53000),
 ('Flexi','Edukasi',15000)
 
-SELECT * FROM pulsa
+-- Record Game
+INSERT INTO game VALUES
+('PUBG','263 UC',47000),
+('PUBG','525 UC',92000),
+('PUBG','788 UC',135000),
+('PUBG','1050 UC',180000),
+('PUBG','1375 UC',224000),
+('PUBG','1639 UC',270000),
+('PUBG','1900 UC',315000),
+('PUBG','2163 UC',357000),
+('Mobile Legends','112 Diamond',26000),
+('Mobile Legends','222 Diamond',51000),
+('Mobile Legends','345 Diamond',75000),
+('Mobile Legends','570 Diamond',123000),
+('Mobile Legends','725 Diamond',194000),
+('Mobile Legends','1345 Diamond',272000),
+('Mobile Legends','2165 Diamond',460000),
+('Mobile Legends','3500 Diamond',765000),
+('Free Fire','50 Diamond',6960),
+('Free Fire','70 Diamond',9570),
+('Free Fire','100 Diamond',13920),
+('Free Fire','140 Diamond',19140),
+('Free Fire','210 Diamond',28710),
+('Free Fire','355 Diamond',47850),
+('Free Fire','720 Diamond',95700),
+('Free Fire','1075 Diamond',143550),
+('Arena of Valor','40 Voucher',8500),
+('Arena of Valor','90 Voucher',16000),
+('Arena of Valor','230 Voucher',38000),
+('Arena of Valor','370 Voucher',60000),
+('Arena of Valor','470 Voucher',74000),
+('Arena of Valor','560 Voucher',88000),
+('Arena of Valor','700 Voucher',110000),
+('Arena of Valor','999 Voucher',147000),
+('Steam','IDR 8.000',9000),
+('Steam','IDR 12.000',13500),
+('Steam','IDR 45.000',50500),
+('Steam','IDR 60.000',68800),
+('Steam','IDR 90.000',100000),
+('Steam','IDR 120.000',134500),
+('Steam','IDR 250.000',280000),
+('Steam','IDR 400.000',465000)
 
 SELECT * FROM akun
 
+SELECT * FROM pulsa
+
 SELECT * FROM paket_data
+
+SELECT * FROM game
