@@ -78,10 +78,75 @@ total_tagihan int
 )
 
 -- Record Pulsa
+INSERT INTO pulsa VALUES
+('XL',5000,6000),
+('XL',10000,11000),
+('XL',15000,16000),
+('XL',20000,21000),
+('XL',35000,36000),
+('XL',50000,51000),
+('XL',100000,101000),
+('XL',150000,151000),
+('Indosat',5000,7000),
+('Indosat',10000,12000),
+('Indosat',15000,17000),
+('Indosat',20000,22000),
+('Indosat',35000,37000),
+('Indosat',50000,52000),
+('Indosat',100000,102000),
+('Indosat',150000,152000),
+('Tri',5000,6000),
+('Tri',10000,11000),
+('Tri',15000,16000),
+('Tri',20000,21000),
+('Tri',35000,36000),
+('Tri',50000,51000),
+('Tri',100000,101000),
+('Tri',150000,151000),
+('Telkomsel',5000,8000),
+('Telkomsel',10000,13000),
+('Telkomsel',15000,18000),
+('Telkomsel',20000,23000),
+('Telkomsel',35000,38000),
+('Telkomsel',50000,53000),
+('Telkomsel',100000,103000),
+('Telkomsel',150000,153000),
+('Smartfren',5000,7000),
+('Smartfren',10000,12000),
+('Smartfren',15000,17000),
+('Smartfren',20000,22000),
+('Smartfren',35000,37000),
+('Smartfren',50000,52000),
+('Smartfren',100000,102000),
+('Smartfren',150000,152000),
+('Axis',5000,6000),
+('Axis',10000,11000),
+('Axis',15000,16000),
+('Axis',20000,21000),
+('Axis',35000,36000),
+('Axis',50000,51000),
+('Axis',100000,101000),
+('Axis',150000,151000),
+('ByU',5000,7000),
+('ByU',10000,12000),
+('ByU',15000,17000),
+('ByU',20000,22000),
+('ByU',35000,37000),
+('ByU',50000,52000),
+('ByU',100000,102000),
+('ByU',150000,152000),
+('Flexi',5000,6000),
+('Flexi',10000,11000),
+('Flexi',15000,16000),
+('Flexi',20000,21000),
+('Flexi',35000,36000),
+('Flexi',50000,51000),
+('Flexi',100000,101000),
+('Flexi',150000,151000)
 
 -- Record Akun
-INSERT INTO akun (usrname, passwd)
-VALUES ('admin', 'notadmin')
+INSERT INTO akun (usrname, passwd) VALUES
+('admin', 'notadmin')
 
 -- Record Paket Data
 INSERT INTO paket_data VALUES
@@ -101,14 +166,14 @@ INSERT INTO paket_data VALUES
 ('Indosat','Freedom Combo 8 GB 30 Hari',33300),
 ('Indosat','Freedom Combo 15 GB + 1 GB',47200),
 ('Indosat','Nelpon Sepuasnya',10800),
-('Three','AddOn 3 GB',10000),
-('Three','AON 50 GB 24 Jam',141000),
-('Three','AON 3 GB + Nelpon 30 Menit',27800),
-('Three','AON 6 GB + Nelpon 60 Menit',37000),
-('Three','AON 16 GB',83500),
-('Three','AON Unlimited 12 GB',51200),
-('Three','AON Unlimited 30 GB',85100),
-('Three','Edukasi 15 GB 30 Hari',15000),
+('Tri','AddOn 3 GB',10000),
+('Tri','AON 50 GB 24 Jam',141000),
+('Tri','AON 3 GB + Nelpon 30 Menit',27800),
+('Tri','AON 6 GB + Nelpon 60 Menit',37000),
+('Tri','AON 16 GB',83500),
+('Tri','AON Unlimited 12 GB',51200),
+('Tri','AON Unlimited 30 GB',85100),
+('Tri','Edukasi 15 GB 30 Hari',15000),
 ('Telkomsel','Data 5 GB 7 Hari',55300),
 ('Telkomsel','Data 10 GB 30 Hari',86700),
 ('Telkomsel','Data 5 GB + Nelpon 30 Menit',57000),
@@ -149,6 +214,8 @@ INSERT INTO paket_data VALUES
 ('Flexi','10 GB + 1000 SMS',68000),
 ('Flexi','Nelpon dan SMS Sepuasnya',53000),
 ('Flexi','Edukasi',15000)
+
+SELECT * FROM pulsa
 
 SELECT * FROM akun
 
