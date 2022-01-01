@@ -350,6 +350,10 @@ INSERT INTO voucher VALUES
 ('Tiket.com',300000,302000),
 ('Tiket.com',500000,502000)
 
+-- Record Tagihan
+INSERT INTO tagihan VALUES
+(1234567890,'Syberian Highwalker','Yogyakarta','Desember 2077',999999)
+
 SELECT * FROM akun
 
 SELECT * FROM pulsa
@@ -361,3 +365,5 @@ SELECT * FROM game
 SELECT * FROM streaming
 
 SELECT * FROM voucher
+
+SELECT * FROM tagihan
