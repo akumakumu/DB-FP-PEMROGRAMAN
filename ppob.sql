@@ -260,6 +260,31 @@ INSERT INTO game VALUES
 ('Steam','IDR 250.000',280000),
 ('Steam','IDR 400.000',465000)
 
+-- Record Streaming
+INSERT INTO streaming VALUES
+('Netflix','7 Hari',17900),
+('Netflix','30 Hari',37900),
+('Netflix','90 Hari',113700),
+('Netflix','1 Tahun Lifetime',454800),
+('iFlix','7 Hari',5000),
+('iFlix','30 Hari',15000),
+('iFlix','90 Hari',40000),
+('iFlix','1 Tahun Lifetime',160000),
+('Vidio','7 Hari',19000),
+('Vidio','30 Hari',29000),
+('Vidio','90 Hari',89000),
+('Vidio','1 Tahun Lifetime',199000),
+('Viu','7 Hari',10000),
+('Viu','30 Hari',30000),
+('Viu','90 Hari',75000),
+('Viu','1 Tahun Lifetime',200000),
+('MaxStream','7 Hari',15000),
+('MaxStream','30 Hari',25000),
+('MaxStream','90 Hari',69000),
+('MaxStream','1 Tahun Lifetime',280000)
+
+-- Record Voucher Belanja
+
 SELECT * FROM akun
 
 SELECT * FROM pulsa
@@ -267,3 +292,5 @@ SELECT * FROM pulsa
 SELECT * FROM paket_data
 
 SELECT * FROM game
+
+SELECT * FROM streaming
