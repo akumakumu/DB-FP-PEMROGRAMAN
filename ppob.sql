@@ -284,6 +284,71 @@ INSERT INTO streaming VALUES
 ('MaxStream','1 Tahun Lifetime',280000)
 
 -- Record Voucher Belanja
+INSERT INTO voucher VALUES
+('Indomaret',5000,7000),
+('Indomaret',10000,12000),
+('Indomaret',20000,22000),
+('Indomaret',50000,52000),
+('Indomaret',100000,102000),
+('Indomaret',150000,152000),
+('Indomaret',300000,302000),
+('Indomaret',500000,502000),
+('Alfamart',5000,7000),
+('Alfamart',10000,12000),
+('Alfamart',20000,22000),
+('Alfamart',50000,52000),
+('Alfamart',100000,102000),
+('Alfamart',150000,152000),
+('Alfamart',300000,302000),
+('Alfamart',500000,502000),
+('OYO',5000,7000),
+('OYO',10000,12000),
+('OYO',20000,22000),
+('OYO',50000,52000),
+('OYO',100000,102000),
+('OYO',150000,152000),
+('OYO',300000,302000),
+('OYO',500000,502000),
+('RedDoorz',5000,7000),
+('RedDoorz',10000,12000),
+('RedDoorz',20000,22000),
+('RedDoorz',50000,52000),
+('RedDoorz',100000,102000),
+('RedDoorz',150000,152000),
+('RedDoorz',300000,302000),
+('RedDoorz',500000,502000),
+('Carrefour',5000,7000),
+('Carrefour',10000,12000),
+('Carrefour',20000,22000),
+('Carrefour',50000,52000),
+('Carrefour',100000,102000),
+('Carrefour',150000,152000),
+('Carrefour',300000,302000),
+('Carrefour',500000,502000),
+('Gramedia',5000,7000),
+('Gramedia',10000,12000),
+('Gramedia',20000,22000),
+('Gramedia',50000,52000),
+('Gramedia',100000,102000),
+('Gramedia',150000,152000),
+('Gramedia',300000,302000),
+('Gramedia',500000,502000),
+('K24 Klik',5000,7000),
+('K24 Klik',10000,12000),
+('K24 Klik',20000,22000),
+('K24 Klik',50000,52000),
+('K24 Klik',100000,102000),
+('K24 Klik',150000,152000),
+('K24 Klik',300000,302000),
+('K24 Klik',500000,502000),
+('Tiket.com',5000,7000),
+('Tiket.com',10000,12000),
+('Tiket.com',20000,22000),
+('Tiket.com',50000,52000),
+('Tiket.com',100000,102000),
+('Tiket.com',150000,152000),
+('Tiket.com',300000,302000),
+('Tiket.com',500000,502000)
 
 SELECT * FROM akun
 
@@ -294,3 +359,5 @@ SELECT * FROM paket_data
 SELECT * FROM game
 
 SELECT * FROM streaming
+
+SELECT * FROM voucher
