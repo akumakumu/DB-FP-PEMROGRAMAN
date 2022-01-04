@@ -30,7 +30,7 @@ jenis_produk varchar(32) CHECK (jenis_produk IN ('Kartu Perdana','PLN','PDAM','I
 nomor_tagihan int NOT NULL,
 nama_pelanggan varchar(64) NOT NULL,
 daerah varchar(32) NOT NULL,
-periode varchar(32) CHECK (periode IN ('Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember') NOT NULL,
+periode varchar(32) CHECK (periode IN ('Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember')) NOT NULL,
 total_tagihan int NOT NULL
 )
 
