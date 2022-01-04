@@ -335,4 +335,22 @@ INSERT INTO produk VALUES
 ('Tiket07','Hiburan','Voucher','Tiket.com','Rp300.000',302000),
 ('Tiket08','Hiburan','Voucher','Tiket.com','Rp500.000',502000)
 
+-- Record Tagihan Kartu Perdana
+INSERT INTO tagihan VALUES
+('1001','Tagihan','Kartu Perdana',11111111,'Muhammad Zahran','Yogyakarta','Januari',100000)
+
+-- Record Tagihan PLN
+INSERT INTO tagihan VALUES
+('2001','Tagihan','PLN',22222222,'Rilo Prasetyo','Sleman','Februari',200000)
+
+-- Record Tagihan PDAM
+INSERT INTO tagihan VALUES
+('3001','Tagihan','PDAM',33333333,'Faisal Chan','Surabaya','Maret',300000)
+
+-- Record Tagihan Internet
+INSERT INTO tagihan VALUES
+('4001','Tagihan','Internet',44444444,'Rifky Budi','Yogyakarta','April',400000)
+
 SELECT * FROM produk
+
+SELECT * FROM tagihan
