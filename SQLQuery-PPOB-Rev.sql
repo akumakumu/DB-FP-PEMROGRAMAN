@@ -43,6 +43,7 @@ total_tagihan int NOT NULL
 CREATE TABLE pembeli
 (
 id_pembeli int IDENTITY(1,1) PRIMARY KEY,
+nomor_pembeli numeric,
 userid_pembeli varchar(32),
 email varchar(64)
 )
@@ -351,6 +352,16 @@ INSERT INTO tagihan VALUES
 INSERT INTO tagihan VALUES
 ('4001','Tagihan','Internet',44444444,'Rifky Budi','Yogyakarta','April',400000)
 
+-- Record Nomor Pembeli [ Test Numeric ]
+INSERT INTO pembeli(nomor_pembeli) VALUES
+('088888888888')
+
+-- DML TEST
+
+SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pembeli'
+
 SELECT * FROM produk
 
 SELECT * FROM tagihan
+
+SELECT * FROM pembeli
