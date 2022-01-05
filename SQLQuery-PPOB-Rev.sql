@@ -203,6 +203,52 @@ INSERT INTO produk VALUES
 ('Flexi15','Isi Ulang','Paket Data','Flexi','Nelpon dan SMS Sepuasnya',53000),
 ('Flexi16','Isi Ulang','Paket Data','Flexi','Edukasi',15000)
 
+-- Record E-Wallet
+INSERT INTO produk VALUES
+('Dana01','Isi Ulang','E-Wallet','Dana','Rp20.000',25000),
+('Dana02','Isi Ulang','E-Wallet','Dana','Rp50.000',55000),
+('Dana03','Isi Ulang','E-Wallet','Dana','Rp100.000',105000),
+('Dana04','Isi Ulang','E-Wallet','Dana','Rp200.000',205000),
+('Dana05','Isi Ulang','E-Wallet','Dana','Rp500.000',505000),
+('Dana06','Isi Ulang','E-Wallet','Dana','Rp.1.000.000',1005000),
+('Dana07','Isi Ulang','E-Wallet','Dana','Rp.5.000.000',5005000),
+('Dana08','Isi Ulang','E-Wallet','Dana','Rp.10.000.000',10005000),
+('Shoppe01','Isi Ulang','E-Wallet','ShoppePay','Rp20.000',25000),
+('Shoppe02','Isi Ulang','E-Wallet','ShoppePay','Rp50.000',55000),
+('Shoppe03','Isi Ulang','E-Wallet','ShoppePay','Rp100.000',105000),
+('Shoppe04','Isi Ulang','E-Wallet','ShoppePay','Rp200.000',205000),
+('Shoppe05','Isi Ulang','E-Wallet','ShoppePay','Rp500.000',505000),
+('Shoppe06','Isi Ulang','E-Wallet','ShoppePay','Rp.1.000.000',1005000),
+('Shoppe07','Isi Ulang','E-Wallet','ShoppePay','Rp.5.000.000',5005000),
+('Shoppe08','Isi Ulang','E-Wallet','ShoppePay','Rp.10.000.000',10005000),
+('Link01','Isi Ulang','E-Wallet','Link Aja','Rp20.000',25000),
+('Link02','Isi Ulang','E-Wallet','Link Aja','Rp50.000',55000),
+('Link03','Isi Ulang','E-Wallet','Link Aja','Rp100.000',105000),
+('Link04','Isi Ulang','E-Wallet','Link Aja','Rp200.000',205000),
+('Link05','Isi Ulang','E-Wallet','Link Aja','Rp500.000',505000),
+('Link06','Isi Ulang','E-Wallet','Link Aja','Rp.1.000.000',1005000),
+('Link07','Isi Ulang','E-Wallet','Link Aja','Rp.5.000.000',5005000),
+('Link08','Isi Ulang','E-Wallet','Link Aja','Rp.10.000.000',10005000),
+('GoPay01','Isi Ulang','E-Wallet','GoPay','Rp20.000',25000),
+('GoPay02','Isi Ulang','E-Wallet','GoPay','Rp50.000',55000),
+('GoPay03','Isi Ulang','E-Wallet','GoPay','Rp100.000',105000),
+('GoPay04','Isi Ulang','E-Wallet','GoPay','Rp200.000',205000),
+('GoPay05','Isi Ulang','E-Wallet','GoPay','Rp500.000',505000),
+('GoPay06','Isi Ulang','E-Wallet','GoPay','Rp.1.000.000',1005000),
+('GoPay07','Isi Ulang','E-Wallet','GoPay','Rp.5.000.000',5005000),
+('GoPay08','Isi Ulang','E-Wallet','GoPay','Rp.10.000.000',10005000)
+
+-- Record Listrik PLN
+INSERT INTO produk VALUES
+('PLN01','Isi Ulang','Listrik PLN','PLN','Rp20.000',30000),
+('PLN02','Isi Ulang','Listrik PLN','PLN','Rp50.000',60000),
+('PLN03','Isi Ulang','Listrik PLN','PLN','Rp100.000',110000),
+('PLN04','Isi Ulang','Listrik PLN','PLN','Rp200.000',210000),
+('PLN05','Isi Ulang','Listrik PLN','PLN','Rp500.000',510000),
+('PLN06','Isi Ulang','Listrik PLN','PLN','Rp.1.000.000',1010000),
+('PLN07','Isi Ulang','Listrik PLN','PLN','Rp.5.000.000',5010000),
+('PLN08','Isi Ulang','Listrik PLN','PLN','Rp.10.000.000',10010000)
+
 -- Record Game
 INSERT INTO produk VALUES
 ('PUBG01','Hiburan','Game','PUBG','263 UC',47000),
