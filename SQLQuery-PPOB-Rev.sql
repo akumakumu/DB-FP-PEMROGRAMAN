@@ -29,7 +29,7 @@ CREATE TABLE tagihan
 (
 id_tagihan varchar(16) PRIMARY KEY,
 kategori_tagihan varchar(32) CHECK (kategori_tagihan = 'Tagihan') NOT NULL,
-jenis_produk varchar(32) CHECK (jenis_produk IN ('Kartu Perdana','PLN','PDAM','Internet')) NOT NULL,
+jenis_tagihan varchar(32) CHECK (jenis_tagihan IN ('Kartu Perdana','PLN','PDAM','Internet')) NOT NULL,
 nomor_tagihan int NOT NULL,
 nama_pelanggan varchar(64) NOT NULL,
 daerah varchar(32) NOT NULL,
