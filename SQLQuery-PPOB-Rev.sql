@@ -1,6 +1,4 @@
-CREATE DATABASE ppob_rev
-
-USE ppob_rev
+CREATE DATABASE ppob
 
 USE ppob
 
