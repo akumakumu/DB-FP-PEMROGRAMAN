@@ -37,22 +37,22 @@ periode varchar(32) CHECK (periode IN ('Januari','Februari','Maret','April','Mei
 total_tagihan int NOT NULL
 )
 
--- Tabel Pembeli
-CREATE TABLE pembeli
-(
-id_pembeli int IDENTITY(1,1) PRIMARY KEY,
-nomor_pembeli numeric,
-userid_pembeli varchar(32),
-email varchar(64)
-)
-
 -- Tabel Transaksi
 CREATE TABLE transaksi
 (
 id_transaksi int IDENTITY(1,1) PRIMARY KEY,
 id_produk varchar(16) FOREIGN KEY REFERENCES produk(id_produk),
 id_tagihan varchar(16) FOREIGN KEY REFERENCES tagihan(id_tagihan),
-id_pembeli int FOREIGN KEY REFERENCES pembeli(id_pembeli)
+)
+
+-- Tabel Pembeli
+CREATE TABLE pembeli
+(
+id_pembeli int IDENTITY(1,1) PRIMARY KEY,
+id_transaksi int FOREIGN KEY REFERENCES transaksi(id_transaksi),
+nomor_pembeli numeric,
+userid_pembeli varchar(32),
+email varchar(64)
 )
 
 -- Tabel Pembayaran
@@ -396,16 +396,63 @@ INSERT INTO tagihan VALUES
 INSERT INTO tagihan VALUES
 ('4001','Tagihan','Internet',44444444,'Rifky Budi','Yogyakarta','April',400000)
 
--- Record Nomor Pembeli [ Test Numeric ]
-INSERT INTO pembeli(nomor_pembeli) VALUES
-('088888888888')
+-- INSERT RECORD MANUAL
+-- Record Transaksi
+INSERT INTO transaksi(id_produk) VALUES
+('ByU01'),
+('XL09')
+
+-- Record Pembeli
+INSERT INTO pembeli(id_transaksi,nomor_pembeli) VALUES
+(1,'088888888888'),
+(2,'087777777777')
+
+-- Record Pembayaran
+INSERT INTO pembayaran(id_transaksi, total_bayar) VALUES
+(1,100000),
+(2,90000)
 
 -- DML TEST
-
 SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pembeli'
 
 SELECT * FROM produk
 
+SELECT * FROM akun
+
 SELECT * FROM tagihan
 
+SELECT * FROM transaksi
+
 SELECT * FROM pembeli
+
+SELECT * FROM pembayaran
+
+-- DELETE
+DELETE FROM pembeli
+DELETE FROM pembayaran
+DELETE FROM transaksi
+
+SELECT periode FROM tagihan WHERE nomor_tagihan = 11111111
+
+-- QUERY DDL BUAT PRESENTASI
+ALTER TABLE tagihan
+ALTER COLUMN kategori_tagihan varchar(10) NOT NULL;
+
+SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'tagihan'
+
+-- QUERY DML BUAT PRESENTASI
+SELECT
+produk.jenis_produk AS 'Jenis Pengisian',
+produk.nominal AS 'Paket Yang Dipilih',
+pembeli.nomor_pembeli AS 'Nomor Telepon Pembeli',
+produk.harga AS 'Harga Paket',
+pembayaran.total_bayar AS 'Uang yang dibayarkan'
+FROM transaksi
+JOIN produk ON produk.id_produk = transaksi.id_produk
+JOIN pembeli ON pembeli.id_transaksi = transaksi.id_transaksi
+JOIN pembayaran ON pembayaran.id_transaksi = transaksi.id_transaksi
+ORDER BY transaksi.id_transaksi DESC
+
+
+SELECT * FROM transaksi
+ORDER BY id_transaksi DESC
