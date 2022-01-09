@@ -13,7 +13,7 @@ email_akun varchar(64),
 no_telp int
 )
 
--- Tabel Produk
+-- Tabel Produk Daffa
 CREATE TABLE produk
 (
 id_produk varchar(16) PRIMARY KEY,
@@ -24,7 +24,7 @@ nominal varchar(64) NOT NULL,
 harga int NOT NULL
 )
 
--- Tabel Tagihan
+-- Tabel Tagihan Aziz
 CREATE TABLE tagihan
 (
 id_tagihan varchar(16) PRIMARY KEY,
@@ -37,7 +37,7 @@ periode varchar(32) CHECK (periode IN ('Januari','Februari','Maret','April','Mei
 total_tagihan int NOT NULL
 )
 
--- Tabel Transaksi
+-- Tabel Transaksi Rizky
 CREATE TABLE transaksi
 (
 id_transaksi int IDENTITY(1,1) PRIMARY KEY,
@@ -45,7 +45,7 @@ id_produk varchar(16) FOREIGN KEY REFERENCES produk(id_produk),
 id_tagihan varchar(16) FOREIGN KEY REFERENCES tagihan(id_tagihan),
 )
 
--- Tabel Pembeli
+-- Tabel Pembeli Felda
 CREATE TABLE pembeli
 (
 id_pembeli int IDENTITY(1,1) PRIMARY KEY,
@@ -55,7 +55,7 @@ userid_pembeli varchar(32),
 email varchar(64)
 )
 
--- Tabel Pembayaran
+-- Tabel Pembayaran Alifqi
 CREATE TABLE pembayaran
 (
 id_pembayaran int IDENTITY(1,1) PRIMARY KEY,
@@ -445,7 +445,7 @@ SELECT periode FROM tagihan WHERE nomor_tagihan = 11111111
 
 -- QUERY DDL BUAT PRESENTASI
 ALTER TABLE tagihan
-ALTER COLUMN kategori_tagihan varchar(10) NOT NULL;
+ALTER COLUMN kategori_tagihan varchar(10) NOT NULL
 
 SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'tagihan'
 
