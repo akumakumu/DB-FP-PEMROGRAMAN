@@ -402,15 +402,23 @@ INSERT INTO transaksi(id_produk) VALUES
 ('ByU01'),
 ('XL09')
 
+INSERT INTO transaksi(id_tagihan) VALUES
+('4001')
+
 -- Record Pembeli
 INSERT INTO pembeli(id_transaksi,nomor_pembeli) VALUES
 (1,'088888888888'),
 (2,'087777777777')
 
+
+
 -- Record Pembayaran
 INSERT INTO pembayaran(id_transaksi, total_bayar) VALUES
 (1,100000),
 (2,90000)
+
+INSERT INTO pembayaran(id_transaksi, total_bayar) VALUES
+(3,500000)
 
 -- DML TEST
 SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pembeli'
@@ -422,6 +430,7 @@ SELECT * FROM akun
 SELECT * FROM tagihan
 
 SELECT * FROM transaksi
+SELECT COUNT(id_transaksi) FROM transaksi
 
 SELECT * FROM pembeli
 
@@ -441,6 +450,7 @@ ALTER COLUMN kategori_tagihan varchar(10) NOT NULL;
 SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'tagihan'
 
 -- QUERY DML BUAT PRESENTASI
+-- Hanya Produk
 SELECT
 produk.jenis_produk AS 'Jenis Pengisian',
 produk.nominal AS 'Paket Yang Dipilih',
@@ -449,10 +459,49 @@ produk.harga AS 'Harga Paket',
 pembayaran.total_bayar AS 'Uang yang dibayarkan'
 FROM transaksi
 JOIN produk ON produk.id_produk = transaksi.id_produk
+JOIN tagihan ON tagihan.id_tagihan = transaksi.id_transaksi
 JOIN pembeli ON pembeli.id_transaksi = transaksi.id_transaksi
 JOIN pembayaran ON pembayaran.id_transaksi = transaksi.id_transaksi
 ORDER BY transaksi.id_transaksi DESC
 
-
-SELECT * FROM transaksi
-ORDER BY id_transaksi DESC
+-- Produk dan Tagihan
+SELECT
+produk.kategori_produk AS 'Kategori Produk',
+produk.jenis_produk AS 'Jenis Produk',
+produk.nama_produk AS 'Nama Produk',
+produk.nominal AS 'Paket Yang Dipilih',
+produk.harga AS 'Harga Paket',
+tagihan.kategori_tagihan AS 'Kategori Tagihan',
+tagihan.jenis_tagihan AS 'Jenis Tagihan',
+tagihan.nomor_tagihan AS 'Nomor Tagihan Pelanggan',
+tagihan.nama_pelanggan AS 'Nama Pelanggan',
+tagihan.daerah AS 'Daerah Pelanggan',
+tagihan.periode AS 'Periode Tagihan',
+tagihan.total_tagihan AS 'Total Tagihan',
+pembeli.nomor_pembeli AS 'Nomor Telepon Pembeli',
+pembeli.userid_pembeli AS 'User ID Pembeli',
+pembeli.email AS 'E-Mail Pembeli',
+pembayaran.total_bayar AS 'Total Yang Dibayarkan'
+FROM transaksi
+FULL JOIN produk ON produk.id_produk = transaksi.id_produk
+FULL JOIN tagihan ON tagihan.id_tagihan = transaksi.id_tagihan
+FULL JOIN pembeli ON pembeli.id_transaksi = transaksi.id_transaksi
+JOIN pembayaran ON pembayaran.id_transaksi = transaksi.id_transaksi
+WHERE 
+produk.kategori_produk LIKE '%a%' OR 
+produk.jenis_produk LIKE '%a%' OR 
+produk.nama_produk LIKE '%a%' OR 
+produk.nominal LIKE '%a%' OR 
+produk.harga LIKE '%a%' OR 
+tagihan.kategori_tagihan LIKE '%a%' OR 
+tagihan.jenis_tagihan LIKE '%a%' OR 
+tagihan.nomor_tagihan LIKE '%a%' OR 
+tagihan.nama_pelanggan LIKE '%a%' OR 
+tagihan.daerah LIKE '%a%' OR 
+tagihan.periode LIKE '%a%' OR 
+tagihan.total_tagihan LIKE '%a%' OR 
+pembeli.nomor_pembeli LIKE '%a%' OR 
+pembeli.userid_pembeli LIKE '%a%' OR 
+pembeli.email LIKE '%a%' OR 
+pembayaran.total_bayar LIKE '%a%'
+ORDER BY transaksi.id_transaksi DESC
