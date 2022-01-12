@@ -2,6 +2,8 @@ CREATE DATABASE ppob
 
 USE ppob
 
+USE presensi
+
 -- Tabel Akun
 CREATE TABLE akun
 (
@@ -13,7 +15,7 @@ email_akun varchar(64),
 no_telp int
 )
 
--- Tabel Produk Daffa
+-- Tabel Produk
 CREATE TABLE produk
 (
 id_produk varchar(16) PRIMARY KEY,
@@ -24,7 +26,7 @@ nominal varchar(64) NOT NULL,
 harga int NOT NULL
 )
 
--- Tabel Tagihan Aziz
+-- Tabel Tagihan
 CREATE TABLE tagihan
 (
 id_tagihan varchar(16) PRIMARY KEY,
@@ -37,7 +39,7 @@ periode varchar(32) CHECK (periode IN ('Januari','Februari','Maret','April','Mei
 total_tagihan int NOT NULL
 )
 
--- Tabel Transaksi Rizky
+-- Tabel Transaksi
 CREATE TABLE transaksi
 (
 id_transaksi int IDENTITY(1,1) PRIMARY KEY,
@@ -45,7 +47,7 @@ id_produk varchar(16) FOREIGN KEY REFERENCES produk(id_produk),
 id_tagihan varchar(16) FOREIGN KEY REFERENCES tagihan(id_tagihan),
 )
 
--- Tabel Pembeli Felda
+-- Tabel Pembeli
 CREATE TABLE pembeli
 (
 id_pembeli int IDENTITY(1,1) PRIMARY KEY,
@@ -55,7 +57,7 @@ userid_pembeli varchar(32),
 email varchar(64)
 )
 
--- Tabel Pembayaran Alifqi
+-- Tabel Pembayaran
 CREATE TABLE pembayaran
 (
 id_pembayaran int IDENTITY(1,1) PRIMARY KEY,
@@ -400,25 +402,68 @@ INSERT INTO tagihan VALUES
 -- Record Transaksi
 INSERT INTO transaksi(id_produk) VALUES
 ('ByU01'),
-('XL09')
+('XL09'),
+('PUBG01'),
+('PUBG02'),
+('ML01'),
+('ML02'),
+('CRF01'),
+('Alfa01'),
+('Netflix04'),
+('iFlix03')
 
 INSERT INTO transaksi(id_tagihan) VALUES
-('4001')
+('4001'),
+('3001'),
+('2001'),
+('1001')
 
 -- Record Pembeli
 INSERT INTO pembeli(id_transaksi,nomor_pembeli) VALUES
 (1,'088888888888'),
 (2,'087777777777')
 
+INSERT INTO pembeli(id_transaksi, userid_pembeli) VALUES
+(3, '1234567890'),
+(4, '1234567789'),
+(5, '1234239742'),
+(6, '0982364923')
 
+INSERT INTO pembeli(id_transaksi, email) VALUES
+(7, 'example@example.co.id'),
+(8, 'example@example.co.id'),
+(9, 'example@example.co.id'),
+(10, 'example@example.co.id')
 
 -- Record Pembayaran
 INSERT INTO pembayaran(id_transaksi, total_bayar) VALUES
 (1,100000),
-(2,90000)
+(2,90000),
+(3,500000),
+(4,80000),
+(5,75000),
+(6,30000),
+(7,71000),
+(8,100000),
+(9,95000),
+(10,12399),
+(11,38000),
+(12,12000),
+(13,100000),
+(14,72000)
+
+INSERT INTO transaksi(id_produk) VALUES
+('Flexi04')
+
+INSERT INTO pembeli(id_transaksi,nomor_pembeli) VALUES
+(15,'0123456789')
 
 INSERT INTO pembayaran(id_transaksi, total_bayar) VALUES
-(3,500000)
+(15,30000)
+
+SELECT * FROM tagihan
+SELECT * FROM pembeli
+SELECT * FROM pembayaran
 
 -- DML TEST
 SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pembeli'
@@ -487,21 +532,4 @@ FULL JOIN produk ON produk.id_produk = transaksi.id_produk
 FULL JOIN tagihan ON tagihan.id_tagihan = transaksi.id_tagihan
 FULL JOIN pembeli ON pembeli.id_transaksi = transaksi.id_transaksi
 JOIN pembayaran ON pembayaran.id_transaksi = transaksi.id_transaksi
-WHERE 
-produk.kategori_produk LIKE '%a%' OR 
-produk.jenis_produk LIKE '%a%' OR 
-produk.nama_produk LIKE '%a%' OR 
-produk.nominal LIKE '%a%' OR 
-produk.harga LIKE '%a%' OR 
-tagihan.kategori_tagihan LIKE '%a%' OR 
-tagihan.jenis_tagihan LIKE '%a%' OR 
-tagihan.nomor_tagihan LIKE '%a%' OR 
-tagihan.nama_pelanggan LIKE '%a%' OR 
-tagihan.daerah LIKE '%a%' OR 
-tagihan.periode LIKE '%a%' OR 
-tagihan.total_tagihan LIKE '%a%' OR 
-pembeli.nomor_pembeli LIKE '%a%' OR 
-pembeli.userid_pembeli LIKE '%a%' OR 
-pembeli.email LIKE '%a%' OR 
-pembayaran.total_bayar LIKE '%a%'
 ORDER BY transaksi.id_transaksi DESC
